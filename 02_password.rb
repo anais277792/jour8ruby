@@ -1,18 +1,15 @@
 def sign_up
     puts "créer un mot de passe:"
     print ">"
-    mdp = gets.chomp
-    return mdp
+    return gets.chomp
 end
-def log_in 
-    mdp = sign_up
+input = 0 
+def log_in (sign_up)
     puts "entrez votre mot de passe"
     print ">"
     input= gets.chomp 
-    if input != mdp 
-        then puts "entrez votre mot de passe"
-            print ">"
-            input= gets.chomp
+    while input != sign_up
+    input = gets.chomp
     end
 end
 def accueil
@@ -22,7 +19,8 @@ def accueil
     puts "Thp c'est super!"
 end
 def perform
-  log_in
+ 
+  log_in(sign_up)
   accueil
 end
 
